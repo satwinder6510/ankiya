@@ -41,6 +41,7 @@
             color: var(--text-dark);
             line-height: 1.6;
             -webkit-text-size-adjust: 100%;
+            overflow-x: hidden;
         }
 
         /* ── Nav ── */
@@ -55,6 +56,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: padding 0.3s, background 0.3s;
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 3rem;
+            background: rgba(255, 255, 255, 0.97);
         }
 
         .logo {
@@ -130,9 +137,115 @@
             text-align: center;
             padding: 10rem 2rem 6rem;
             background: var(--bg-white);
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-content { max-width: 720px; }
+        /* Parallax floating shapes */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .parallax-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: shapeFadeIn 1.2s ease-out forwards;
+        }
+
+        .parallax-shape.ring {
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        .shape-1 {
+            width: 420px; height: 420px;
+            top: 8%; right: -5%;
+            background: radial-gradient(circle, rgba(184,134,11,0.06) 0%, transparent 70%);
+            animation-delay: 0.2s;
+        }
+
+        .shape-2 {
+            width: 300px; height: 300px;
+            bottom: 10%; left: -3%;
+            background: radial-gradient(circle, rgba(184,134,11,0.05) 0%, transparent 70%);
+            animation-delay: 0.5s;
+        }
+
+        .shape-3 {
+            width: 180px; height: 180px;
+            top: 20%; left: 10%;
+            border: 1.5px solid rgba(184,134,11,0.1);
+            background: transparent;
+            animation-delay: 0.8s;
+        }
+
+        .shape-4 {
+            width: 100px; height: 100px;
+            bottom: 25%; right: 12%;
+            border: 1.5px solid rgba(184,134,11,0.08);
+            background: transparent;
+            animation-delay: 1s;
+        }
+
+        .shape-5 {
+            width: 60px; height: 60px;
+            top: 35%; right: 20%;
+            background: rgba(184,134,11,0.07);
+            animation-delay: 1.2s;
+        }
+
+        .shape-6 {
+            width: 12px; height: 12px;
+            top: 30%; left: 25%;
+            background: var(--gold);
+            opacity: 0;
+            animation: shapeFadeIn 1.2s ease-out 1.4s forwards;
+        }
+
+        .shape-7 {
+            width: 8px; height: 8px;
+            bottom: 35%; right: 28%;
+            background: var(--gold-light);
+            opacity: 0;
+            animation: shapeFadeIn 1.2s ease-out 1.6s forwards;
+        }
+
+        .shape-8 {
+            width: 10px; height: 10px;
+            top: 55%; left: 8%;
+            background: var(--gold);
+            opacity: 0;
+            animation: shapeFadeIn 1.2s ease-out 1.3s forwards;
+        }
+
+        /* Connector lines SVG */
+        .hero-lines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-lines line {
+            stroke: rgba(184,134,11,0.08);
+            stroke-width: 1;
+            stroke-dasharray: 6 4;
+        }
+
+        @keyframes shapeFadeIn {
+            from { opacity: 0; transform: scale(0.8) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .hero-content {
+            max-width: 720px;
+            position: relative;
+            z-index: 1;
+        }
 
         .hero-tag {
             display: inline-block;
@@ -142,6 +255,8 @@
             text-transform: uppercase;
             color: var(--gold);
             margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.3s forwards;
         }
 
         .hero h1 {
@@ -151,6 +266,12 @@
             margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
             color: var(--text-dark);
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.5s forwards;
+        }
+
+        .gold-text {
+            color: var(--gold);
         }
 
         .hero p {
@@ -160,6 +281,8 @@
             margin: 0 auto 2.5rem;
             line-height: 1.75;
             font-weight: 400;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.7s forwards;
         }
 
         .hero-buttons {
@@ -167,6 +290,13 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.9s forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .btn-primary {
@@ -196,11 +326,67 @@
             font-weight: 600;
             font-size: 0.95rem;
             border: 1.5px solid var(--border);
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, transform 0.2s;
             cursor: pointer;
         }
 
-        .btn-outline:hover { border-color: var(--gold); }
+        .btn-outline:hover {
+            border-color: var(--gold);
+            transform: translateY(-1px);
+        }
+
+        /* ── Scroll reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Staggered children */
+        .stagger-children .service-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .stagger-children.visible .service-card:nth-child(1) { transition-delay: 0s; }
+        .stagger-children.visible .service-card:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children.visible .service-card:nth-child(3) { transition-delay: 0.2s; }
+        .stagger-children.visible .service-card:nth-child(4) { transition-delay: 0.3s; }
+        .stagger-children.visible .service-card:nth-child(5) { transition-delay: 0.4s; }
+        .stagger-children.visible .service-card:nth-child(6) { transition-delay: 0.5s; }
+
+        .stagger-children.visible .service-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* ── Sections ── */
         section { padding: 6rem 2rem; }
@@ -277,13 +463,30 @@
         }
 
         /* ── About ── */
-        #about { background: var(--bg-white); }
+        #about {
+            background: var(--bg-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-bg-shape {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(184,134,11,0.04) 0%, transparent 70%);
+            top: -100px;
+            right: -150px;
+            pointer-events: none;
+        }
 
         .about-content {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 5rem;
             align-items: start;
+            position: relative;
+            z-index: 1;
         }
 
         .about-text h2 {
@@ -326,6 +529,40 @@
             border-radius: 50%;
             margin-top: 0.45rem;
             flex-shrink: 0;
+        }
+
+        .quote-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            position: relative;
+        }
+
+        .quote-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.15;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .quote-card p:first-child {
+            font-size: 1.3rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-mid);
+            font-style: italic;
+        }
+
+        .quote-card p:last-child {
+            margin-top: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.9rem;
         }
 
         /* ── Contact ── */
@@ -432,17 +669,22 @@
             color: var(--text-mid);
         }
 
-        /* ── Reduced motion for accessibility & battery saving ── */
+        /* ── Reduced motion ── */
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             .service-card, .btn-primary, .btn-outline, .nav-cta, .nav-links a { transition: none; }
             .service-card:hover { transform: none; }
-            .btn-primary:hover { transform: none; }
+            .btn-primary:hover, .btn-outline:hover { transform: none; }
+            .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
+            .stagger-children .service-card { opacity: 1; transform: none; transition: none; }
+            .parallax-shape { animation: none; opacity: 1; }
+            .hero-tag, .hero h1, .hero p, .hero-buttons { animation: none; opacity: 1; }
         }
 
         /* ── Mobile ── */
         @media (max-width: 768px) {
             nav { padding: 1rem 1.5rem; }
+            nav.scrolled { padding: 0.7rem 1.5rem; }
 
             .nav-links {
                 display: none;
@@ -467,13 +709,15 @@
 
             .hero { padding: 8rem 1.5rem 4rem; }
 
-            /* Larger tap targets on mobile */
+            .shape-1 { width: 250px; height: 250px; }
+            .shape-2 { width: 180px; height: 180px; }
+            .shape-3 { width: 120px; height: 120px; }
+
             .nav-links a { padding: 0.5rem 0; min-height: 44px; display: flex; align-items: center; }
             .btn-primary, .btn-outline { padding: 1rem 2rem; min-height: 48px; }
             .contact-form input, .contact-form textarea { padding: 1rem 1.1rem; min-height: 48px; }
         }
 
-        /* Small phones (common budget Android in India) */
         @media (max-width: 380px) {
             .hero h1 { font-size: 2rem; }
             .hero { padding: 7rem 1rem 3rem; }
@@ -485,9 +729,9 @@
 <body>
 
 <!-- Navigation -->
-<nav>
+<nav id="mainNav">
     <a href="#" class="logo">
-        <span class="logo-hindi">अंकिया</span>
+        <span class="logo-hindi">&#x0905;&#x0902;&#x0915;&#x093F;&#x092F;&#x093E;</span>
         <span class="logo-english">Ankiya</span>
     </a>
     <ul class="nav-links" id="navLinks">
@@ -502,10 +746,29 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero" id="hero">
+    <!-- Parallax background shapes -->
+    <div class="hero-bg">
+        <div class="parallax-shape shape-1" data-speed="0.03"></div>
+        <div class="parallax-shape shape-2" data-speed="0.05"></div>
+        <div class="parallax-shape shape-3 ring" data-speed="0.04"></div>
+        <div class="parallax-shape shape-4 ring" data-speed="0.06"></div>
+        <div class="parallax-shape shape-5" data-speed="0.07"></div>
+        <div class="parallax-shape shape-6" data-speed="0.08"></div>
+        <div class="parallax-shape shape-7" data-speed="0.09"></div>
+        <div class="parallax-shape shape-8" data-speed="0.06"></div>
+    </div>
+    <!-- Connector lines -->
+    <svg class="hero-lines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <line x1="280" y1="270" x2="520" y2="330" data-speed="0.02"/>
+        <line x1="520" y1="330" x2="1050" y2="190" data-speed="0.03"/>
+        <line x1="1050" y1="190" x2="1180" y2="430" data-speed="0.04"/>
+        <line x1="180" y1="520" x2="420" y2="600" data-speed="0.035"/>
+        <line x1="900" y1="650" x2="1100" y2="550" data-speed="0.045"/>
+    </svg>
     <div class="hero-content">
         <span class="hero-tag">Digital Marketing Agency</span>
-        <h1>Strategy-led digital marketing that drives real growth.</h1>
+        <h1>Strategy-led <span class="gold-text">digital marketing</span> that drives real growth.</h1>
         <p>Ankiya Web Marketing LLP partners with ambitious brands to build visibility, attract the right audience, and turn attention into revenue.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn-primary">Start a Conversation</a>
@@ -517,20 +780,23 @@
 <!-- Services -->
 <section id="services">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2>What We Do</h2>
-            <p>Focused digital services designed to move the needle for your business.</p>
+            <p>Focused digital services designed to move the needle for your business.<br>All work is delivered under <a href="https://brandiqo.in" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600;text-decoration:underline;">Brandiqo</a>, our execution brand.</p>
         </div>
-        <div class="services-grid">
+        <div class="services-grid stagger-children">
             <div class="service-card">
                 <div class="service-icon">&#x1F50D;</div>
                 <h3>SEO & Organic Growth</h3>
                 <p>Data-driven strategies, technical audits, and content that ranks — built to bring in qualified traffic consistently.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">&#x1F4F1;</div>
-                <h3>Social Media</h3>
-                <p>Community building and engagement across the platforms that matter most to your audience.</p>
+                <div class="service-icon">&#x1F3AF;</div>
+                <h3>Lead Generation</h3>
+                <p>Targeted campaigns that deliver qualified leads straight to your pipeline — across Meta, Google, and WhatsApp.</p>
+                <a href="https://brandiqo.in" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;">
+                    <img src="brandiqo-logo.jpeg" alt="Brandiqo" style="height:28px;width:auto;">
+                </a>
             </div>
             <div class="service-card">
                 <div class="service-icon">&#x1F3AF;</div>
@@ -558,9 +824,10 @@
 
 <!-- About -->
 <section id="about">
+    <div class="about-bg-shape" data-speed="0.02"></div>
     <div class="container">
         <div class="about-content">
-            <div class="about-text">
+            <div class="about-text reveal-left">
                 <h2>Why work with <span class="gold">Ankiya?</span></h2>
                 <p>We're a focused digital marketing team that believes in doing fewer things well. No bloated retainers, no vanity metrics — just clear strategy and measurable outcomes.</p>
                 <p>Every engagement starts with understanding your business, your market, and what success actually looks like for you.</p>
@@ -572,9 +839,9 @@
                 </ul>
                 <a href="#contact" class="btn-primary" style="margin-top:2rem;display:inline-block;">Let's Talk</a>
             </div>
-            <div style="background:var(--bg-light);border-radius:16px;padding:3rem 2.5rem;">
-                <p style="font-size:1.3rem;font-weight:300;line-height:1.7;color:var(--text-mid);font-style:italic;">"Good marketing isn't about being everywhere. It's about being in the right place, with the right message, at the right time."</p>
-                <p style="margin-top:1.2rem;font-weight:600;color:var(--text-dark);font-size:0.9rem;">— The Ankiya approach</p>
+            <div class="quote-card reveal-right">
+                <p>"Good marketing isn't about being everywhere. It's about being in the right place, with the right message, at the right time."</p>
+                <p>— The Ankiya approach</p>
             </div>
         </div>
     </div>
@@ -583,12 +850,12 @@
 <!-- Contact -->
 <section id="contact">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2>Get in Touch</h2>
             <p>Have a project in mind? We'd love to hear about it.</p>
         </div>
         <div class="contact-wrapper">
-            <div class="contact-info">
+            <div class="contact-info reveal-left">
                 <h3>Let's start something together.</h3>
                 <p>Whether you need a full digital strategy or help with a specific channel, drop us a note and we'll get back to you within 24 hours.</p>
                 <div class="contact-detail">
@@ -600,7 +867,7 @@
                     <span>India</span>
                 </div>
             </div>
-            <form class="contact-form" onsubmit="handleSubmit(event)">
+            <form class="contact-form reveal-right" onsubmit="handleSubmit(event)">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <input type="text" placeholder="Subject">
@@ -614,24 +881,92 @@
 <!-- Footer -->
 <footer>
     <div class="logo-footer">
-        <span class="logo-hindi">अंकिया</span>
+        <span class="logo-hindi">&#x0905;&#x0902;&#x0915;&#x093F;&#x092F;&#x093E;</span>
         <span class="logo-english">Ankiya Web Marketing LLP</span>
     </div>
     <p>&copy; 2026 Ankiya Web Marketing LLP. All rights reserved.</p>
 </footer>
 
 <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
-    navLinks.querySelectorAll('a').forEach(link =>
-        link.addEventListener('click', () => navLinks.classList.remove('active'))
-    );
-    function handleSubmit(e) {
+(function() {
+    'use strict';
+
+    /* ── Hamburger menu ── */
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', function() { navLinks.classList.toggle('active'); });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() { navLinks.classList.remove('active'); });
+    });
+
+    /* ── Nav shrink on scroll ── */
+    var mainNav = document.getElementById('mainNav');
+    var lastScroll = 0;
+    function onScroll() {
+        var scrollY = window.pageYOffset;
+        if (scrollY > 60) {
+            mainNav.classList.add('scrolled');
+        } else {
+            mainNav.classList.remove('scrolled');
+        }
+        lastScroll = scrollY;
+    }
+
+    /* ── Parallax on scroll ── */
+    var parallaxShapes = document.querySelectorAll('[data-speed]');
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function onParallax() {
+        if (prefersReduced) return;
+        var scrollY = window.pageYOffset;
+        parallaxShapes.forEach(function(el) {
+            var speed = parseFloat(el.getAttribute('data-speed'));
+            var yOffset = -(scrollY * speed);
+            if (el.tagName === 'line') {
+                el.setAttribute('transform', 'translate(0,' + yOffset + ')');
+            } else {
+                el.style.transform = 'translate3d(0,' + yOffset + 'px,0)';
+            }
+        });
+    }
+
+    /* ── Scroll reveal (Intersection Observer) ── */
+    var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-children');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function(el) { observer.observe(el); });
+
+    /* ── Contact form ── */
+    window.handleSubmit = function(e) {
         e.preventDefault();
         alert('Thanks for reaching out! We\'ll get back to you shortly.');
         e.target.reset();
-    }
+    };
+
+    /* ── Combined scroll handler (throttled via rAF) ── */
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                onScroll();
+                onParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Run once on load
+    onScroll();
+    onParallax();
+})();
 </script>
 
 </body>
