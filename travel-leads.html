@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive, high-intent travel leads for Indian travel agents. Verified inquiries for honeymoon, international, family, and group packages — delivered in real time.">
+    <meta name="theme-color" content="#0a6e54">
+    <title>Exclusive Travel Leads for Indian Travel Agents — Brandiqo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #f5f8f7;
+            --bg-deep: #0a1f1a;
+            --ink: #0f1a17;
+            --ink-mid: #4a5854;
+            --ink-light: #8a948f;
+            --brand: #0a6e54;
+            --brand-light: #15a37c;
+            --brand-soft: rgba(10, 110, 84, 0.08);
+            --accent: #e8a528;
+            --border: #e3e8e6;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ── Nav ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+        }
+
+        .brand-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .nav-cta {
+            background: var(--brand);
+            color: #fff;
+            padding: 0.6rem 1.3rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover { background: var(--brand-light); }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 8rem 1.5rem 5rem;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(10, 110, 84, 0.08) 0%, transparent 70%),
+                var(--bg);
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--brand-soft);
+            color: var(--brand);
+            padding: 0.4rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .badge .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--brand-light);
+            box-shadow: 0 0 0 0 rgba(21, 163, 124, 0.6);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(21, 163, 124, 0.6); }
+            70% { box-shadow: 0 0 0 10px rgba(21, 163, 124, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(21, 163, 124, 0); }
+        }
+
+        h1 {
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.3rem;
+        }
+
+        h1 .accent {
+            color: var(--brand);
+            position: relative;
+            white-space: nowrap;
+        }
+
+        h1 .accent::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 4%;
+            height: 12px;
+            background: rgba(232, 165, 40, 0.35);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero p.lead {
+            font-size: 1.15rem;
+            color: var(--ink-mid);
+            max-width: 580px;
+            margin: 0 auto 2.2rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            padding: 0.95rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.15s, background 0.2s, border-color 0.2s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 48px;
+        }
+
+        .btn-primary {
+            background: var(--brand);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(10, 110, 84, 0.25);
+        }
+        .btn-primary:hover { background: var(--brand-light); transform: translateY(-1px); }
+
+        .btn-ghost {
+            background: #fff;
+            color: var(--ink);
+            border: 1.5px solid var(--border);
+        }
+        .btn-ghost:hover { border-color: var(--brand); transform: translateY(-1px); }
+
+        .hero-trust {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .trust-stat {
+            text-align: center;
+        }
+
+        .trust-num {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+
+        .trust-label {
+            font-size: 0.78rem;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.2rem;
+        }
+
+        /* ── Sections ── */
+        section { padding: 5rem 1.5rem; }
+
+        .container { max-width: 1080px; margin: 0 auto; }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--brand);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-head h2 {
+            font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-head p {
+            color: var(--ink-mid);
+            max-width: 580px;
+            margin: 0 auto;
+            font-size: 1.02rem;
+        }
+
+        /* ── Sample lead card ── */
+        .lead-preview-wrap {
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .lead-preview {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.4rem;
+            text-align: left;
+            box-shadow: 0 20px 50px rgba(15, 26, 23, 0.08);
+            position: relative;
+        }
+
+        .lead-preview-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .lead-preview-head .label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--brand);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .lead-preview-head .time {
+            font-size: 0.78rem;
+            color: var(--ink-light);
+        }
+
+        .lead-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.45rem 0;
+            font-size: 0.92rem;
+        }
+
+        .lead-row .k { color: var(--ink-light); }
+        .lead-row .v { color: var(--ink); font-weight: 600; }
+
+        /* ── Why us / features grid ── */
+        #why { background: var(--bg-soft); }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .feature {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(15, 26, 23, 0.06);
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--brand-soft);
+            color: var(--brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature p {
+            color: var(--ink-mid);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* ── How it works ── */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            padding: 2rem 1.5rem 1.5rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            counter-increment: step;
+        }
+
+        .step::before {
+            content: counter(step, decimal-leading-zero);
+            position: absolute;
+            top: -14px;
+            left: 1.5rem;
+            background: var(--brand);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 0.3rem 0.7rem;
+            border-radius: 100px;
+            letter-spacing: 0.05em;
+        }
+
+        .step h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .step p {
+            color: var(--ink-mid);
+            font-size: 0.92rem;
+        }
+
+        /* ── Lead types / chips ── */
+        #lead-types { background: var(--bg-soft); }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            justify-content: center;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .chip {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 0.7rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ink);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .chip:hover {
+            border-color: var(--brand);
+            transform: translateY(-1px);
+        }
+
+        .chip .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--brand-light);
+        }
+
+        /* ── Pricing ── */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.3rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem 1.8rem;
+            position: relative;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .price-card.featured {
+            border-color: var(--brand);
+            box-shadow: 0 20px 50px rgba(10, 110, 84, 0.12);
+        }
+
+        .price-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--ink);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 100px;
+            letter-spacing: 0.05em;
+        }
+
+        .price-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .price-card .price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+            margin: 0.8rem 0 0.3rem;
+        }
+
+        .price-card .price .unit {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ink-light);
+        }
+
+        .price-card .tag {
+            color: var(--ink-mid);
+            font-size: 0.9rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 1.6rem;
+        }
+
+        .price-features li {
+            padding: 0.45rem 0;
+            font-size: 0.9rem;
+            color: var(--ink-mid);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .price-features li::before {
+            content: '\2713';
+            color: var(--brand);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .price-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ── FAQ ── */
+        #faq { background: var(--bg-soft); }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 1.1rem 1.4rem;
+            font-weight: 600;
+            font-size: 0.98rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--brand);
+            font-weight: 300;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+
+        .faq-item .answer {
+            padding: 0 1.4rem 1.2rem;
+            color: var(--ink-mid);
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        /* ── CTA / form ── */
+        #signup {
+            background: var(--bg-deep);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #signup::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle 400px at 20% 30%, rgba(21, 163, 124, 0.18), transparent),
+                radial-gradient(circle 500px at 90% 80%, rgba(232, 165, 40, 0.12), transparent);
+            pointer-events: none;
+        }
+
+        #signup .container { position: relative; z-index: 1; }
+
+        .signup-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .signup-copy h2 {
+            font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .signup-copy p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.02rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .signup-points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .signup-points li {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .signup-points li::before {
+            content: '\2713';
+            color: var(--brand-light);
+            font-weight: 800;
+        }
+
+        .signup-form {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 1.8rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .signup-form h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #fff;
+        }
+
+        .signup-form .sub {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.88rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .signup-form .row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .signup-form input,
+        .signup-form select,
+        .signup-form textarea {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.93rem;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .signup-form input::placeholder,
+        .signup-form textarea::placeholder { color: rgba(255, 255, 255, 0.4); }
+
+        .signup-form input:focus,
+        .signup-form select:focus,
+        .signup-form textarea:focus {
+            border-color: var(--brand-light);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .signup-form select option { background: var(--bg-deep); color: #fff; }
+
+        .signup-form textarea { min-height: 90px; resize: vertical; }
+
+        .signup-form .btn { width: 100%; justify-content: center; margin-top: 0.4rem; }
+
+        .form-note {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.78rem;
+            margin-top: 0.8rem;
+            text-align: center;
+        }
+
+        /* ── Footer ── */
+        footer {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--ink-light);
+            font-size: 0.85rem;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+        }
+
+        footer .brand { justify-content: center; margin-bottom: 0.6rem; }
+        footer a.link { color: var(--brand); font-weight: 500; }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            nav { padding: 0.9rem 1.2rem; }
+            .hero { padding: 7rem 1.2rem 4rem; }
+            section { padding: 4rem 1.2rem; }
+            .hero-trust { gap: 1.5rem; }
+            .signup-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+            .price-card.featured { transform: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .badge .pulse { animation: none; }
+            .btn, .feature, .chip, .price-card { transition: none; }
+            .btn:hover, .feature:hover, .chip:hover { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="brand">
+        <span class="brand-mark">&#x2708;</span>
+        <span>TripLeads <span style="color: var(--brand); font-weight: 600;">by Brandiqo</span></span>
+    </a>
+    <a href="#signup" class="nav-cta">Get Leads</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="badge">
+            <span class="pulse"></span>
+            <span>Now accepting agents for May 2026</span>
+        </div>
+        <h1>Exclusive travel leads, <span class="accent">delivered to one agent only.</span></h1>
+        <p class="lead">High-intent inquiries from Indian travellers — honeymoon, international, family, group, and luxury packages. Verified, sold once, sent to your WhatsApp the moment they come in.</p>
+        <div class="hero-cta">
+            <a href="#signup" class="btn btn-primary">Start receiving leads &rarr;</a>
+            <a href="#how" class="btn btn-ghost">How it works</a>
+        </div>
+        <div class="hero-trust">
+            <div class="trust-stat">
+                <div class="trust-num">12,000+</div>
+                <div class="trust-label">Leads delivered</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-num">300+</div>
+                <div class="trust-label">Agents served</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-num">100%</div>
+                <div class="trust-label">Exclusive, never shared</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-num">&lt; 2 min</div>
+                <div class="trust-label">Avg. delivery time</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sample lead preview -->
+<section style="padding-top: 0;">
+    <div class="container">
+        <div class="lead-preview-wrap">
+            <div class="lead-preview">
+                <div class="lead-preview-head">
+                    <span class="label">&#x1F514; Sample Lead</span>
+                    <span class="time">Just now</span>
+                </div>
+                <div class="lead-row"><span class="k">Name</span><span class="v">Priya S.</span></div>
+                <div class="lead-row"><span class="k">Phone</span><span class="v">+91 98••• ••432</span></div>
+                <div class="lead-row"><span class="k">From</span><span class="v">Mumbai</span></div>
+                <div class="lead-row"><span class="k">Destination</span><span class="v">Bali, Indonesia</span></div>
+                <div class="lead-row"><span class="k">Travel type</span><span class="v">Honeymoon</span></div>
+                <div class="lead-row"><span class="k">Travellers</span><span class="v">2 adults</span></div>
+                <div class="lead-row"><span class="k">Travel dates</span><span class="v">12&ndash;20 Jun 2026</span></div>
+                <div class="lead-row"><span class="k">Budget</span><span class="v">&#x20B9; 1.2 &ndash; 1.5L pp</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why us -->
+<section id="why">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Why TripLeads</div>
+            <h2>Built for serious travel agents.</h2>
+            <p>No shared leads. No bots. No tyre-kickers. Just real travellers ready to book — matched to your specialty.</p>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">&#x1F512;</div>
+                <h3>One lead, one agent</h3>
+                <p>Every lead is sold exclusively to you. We don't blast the same inquiry to 5 agencies and watch you race to the bottom on price.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#x2705;</div>
+                <h3>Pre-qualified inquiries</h3>
+                <p>Every lead is screened for intent, destination, dates, and budget before it ever reaches your inbox. Telecallers verify phone numbers in real time.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#x1F4F2;</div>
+                <h3>Instant WhatsApp delivery</h3>
+                <p>Leads land on your phone within minutes of submission, when buying intent is highest. CRM integrations available.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#x1F3AF;</div>
+                <h3>Filter by your niche</h3>
+                <p>Honeymoon? Europe? Luxury? Group tours? Tell us your specialty and city, and we'll only send leads that fit.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#x1F4B0;</div>
+                <h3>Replacement guarantee</h3>
+                <p>Wrong number, fake inquiry, or duplicate? We replace it — no questions, no support tickets.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#x1F4CA;</div>
+                <h3>Built for Indian market</h3>
+                <p>Indian travellers, Indian rupees, Indian seasonality. We market in the cities and platforms your customers actually use.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section id="how">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Process</div>
+            <h2>From inquiry to booking in 4 steps.</h2>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <h3>We market</h3>
+                <p>Targeted Meta, Google, and YouTube campaigns capture Indian travellers actively researching a trip.</p>
+            </div>
+            <div class="step">
+                <h3>We qualify</h3>
+                <p>Our team verifies the phone, intent, and travel window — and matches the lead to an agent in your niche and region.</p>
+            </div>
+            <div class="step">
+                <h3>You receive</h3>
+                <p>The lead lands on your WhatsApp and dashboard in under 2 minutes, exclusively yours.</p>
+            </div>
+            <div class="step">
+                <h3>You close</h3>
+                <p>Call, quote, and convert. We don't take commission on bookings — the lead is yours to keep.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lead types -->
+<section id="lead-types">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Lead Categories</div>
+            <h2>Pick the leads that match your business.</h2>
+            <p>Subscribe to one category or several. Pause or switch anytime.</p>
+        </div>
+        <div class="chips">
+            <span class="chip"><span class="dot"></span>Honeymoon</span>
+            <span class="chip"><span class="dot"></span>International Family</span>
+            <span class="chip"><span class="dot"></span>Domestic Holidays</span>
+            <span class="chip"><span class="dot"></span>Europe Tours</span>
+            <span class="chip"><span class="dot"></span>Southeast Asia</span>
+            <span class="chip"><span class="dot"></span>Dubai &amp; Middle East</span>
+            <span class="chip"><span class="dot"></span>Maldives &amp; Beach</span>
+            <span class="chip"><span class="dot"></span>Bhutan &amp; Nepal</span>
+            <span class="chip"><span class="dot"></span>Kashmir &amp; Himachal</span>
+            <span class="chip"><span class="dot"></span>Kerala &amp; South India</span>
+            <span class="chip"><span class="dot"></span>Char Dham &amp; Pilgrimage</span>
+            <span class="chip"><span class="dot"></span>Group Tours</span>
+            <span class="chip"><span class="dot"></span>Luxury &amp; Premium</span>
+            <span class="chip"><span class="dot"></span>Corporate / MICE</span>
+            <span class="chip"><span class="dot"></span>Visa &amp; Forex</span>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Pricing</div>
+            <h2>Simple, no-lock-in plans.</h2>
+            <p>Start with a small bundle. Scale up when you see results.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <div class="price">&#x20B9;299<span class="unit"> / lead</span></div>
+                <div class="tag">Pay-as-you-go bundle of 10</div>
+                <ul class="price-features">
+                    <li>10 exclusive leads</li>
+                    <li>1 lead category</li>
+                    <li>WhatsApp delivery</li>
+                    <li>Replacement guarantee</li>
+                </ul>
+                <a href="#signup" class="btn btn-ghost">Choose Starter</a>
+            </div>
+            <div class="price-card featured">
+                <h3>Growth</h3>
+                <div class="price">&#x20B9;249<span class="unit"> / lead</span></div>
+                <div class="tag">Bundle of 50 &middot; Best value</div>
+                <ul class="price-features">
+                    <li>50 exclusive leads</li>
+                    <li>Up to 3 lead categories</li>
+                    <li>Priority WhatsApp + email</li>
+                    <li>Lead dashboard + CSV export</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+                <a href="#signup" class="btn btn-primary">Choose Growth</a>
+            </div>
+            <div class="price-card">
+                <h3>Enterprise</h3>
+                <div class="price">Custom</div>
+                <div class="tag">For agencies booking 100+ trips/month</div>
+                <ul class="price-features">
+                    <li>Unlimited categories &amp; cities</li>
+                    <li>CRM &amp; webhook integration</li>
+                    <li>Geo + budget filters</li>
+                    <li>SLA on delivery time</li>
+                    <li>White-glove onboarding</li>
+                </ul>
+                <a href="#signup" class="btn btn-ghost">Talk to sales</a>
+            </div>
+        </div>
+        <p style="text-align:center; margin-top: 2rem; color: var(--ink-light); font-size: 0.88rem;">Prices exclude GST. Volume discounts available for 100+ leads/month.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">FAQ</div>
+            <h2>Questions, answered.</h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item" open>
+                <summary>What does &ldquo;exclusive&rdquo; actually mean?</summary>
+                <div class="answer">Every lead is sold to exactly one agent &mdash; you. The traveller's contact details are never shared with another agency on our network. This is what lets you quote on value instead of competing on the lowest price.</div>
+            </details>
+            <details class="faq-item">
+                <summary>How are the leads generated?</summary>
+                <div class="answer">We run targeted Meta, Google, and YouTube campaigns in Indian metros and tier-2 cities for specific travel intents. Travellers fill a detailed inquiry form; our team then verifies phone, dates, and budget before routing the lead to a matching agent.</div>
+            </details>
+            <details class="faq-item">
+                <summary>What if a lead is fake or unreachable?</summary>
+                <div class="answer">We replace any lead that is a wrong number, duplicate, or clearly not a real inquiry. Just flag it on your dashboard or WhatsApp us within 48 hours and we credit a replacement.</div>
+            </details>
+            <details class="faq-item">
+                <summary>How fast do I get the leads?</summary>
+                <div class="answer">Most leads reach you within 2 minutes of submission via WhatsApp. Email and dashboard delivery are also available. For Enterprise plans we offer SLA-backed delivery.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Do you take commission on bookings?</summary>
+                <div class="answer">No. You pay only for the lead. Whatever you book, whatever margin you make &mdash; it's yours.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I pause or cancel?</summary>
+                <div class="answer">Yes. Bundles never expire and there are no monthly commitments. Pause whenever you need to, resume when you're ready.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Which cities do you cover?</summary>
+                <div class="answer">All major Indian metros plus 60+ tier-2 cities. You can filter leads by traveller's source city so you only receive customers close to your office or service area.</div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Signup / CTA -->
+<section id="signup">
+    <div class="container">
+        <div class="signup-wrap">
+            <div class="signup-copy">
+                <h2>Get your first 10 leads this week.</h2>
+                <p>Tell us your specialty and city. We'll set up your feed and send a sample lead within 24 hours so you can see the quality before paying for a bundle.</p>
+                <ul class="signup-points">
+                    <li>Free sample lead within 24 hours</li>
+                    <li>No setup fee, no subscription lock-in</li>
+                    <li>Onboarding call with an account manager</li>
+                    <li>Replacement guarantee on every lead</li>
+                </ul>
+            </div>
+            <form class="signup-form" onsubmit="return handleSignup(event)">
+                <h3>Request a sample lead</h3>
+                <p class="sub">Free, no card required.</p>
+                <div class="row">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="text" name="agency" placeholder="Travel agency name" required>
+                    <input type="tel" name="phone" placeholder="WhatsApp number (with +91)" pattern="^\+?[0-9 ]{10,15}$" required>
+                    <input type="email" name="email" placeholder="Email">
+                    <select name="city" required>
+                        <option value="" disabled selected>City you operate in</option>
+                        <option>Mumbai</option>
+                        <option>Delhi NCR</option>
+                        <option>Bangalore</option>
+                        <option>Hyderabad</option>
+                        <option>Chennai</option>
+                        <option>Pune</option>
+                        <option>Ahmedabad</option>
+                        <option>Kolkata</option>
+                        <option>Chandigarh</option>
+                        <option>Jaipur</option>
+                        <option>Lucknow</option>
+                        <option>Kochi</option>
+                        <option>Other</option>
+                    </select>
+                    <select name="niche" required>
+                        <option value="" disabled selected>Primary specialty</option>
+                        <option>Honeymoon</option>
+                        <option>International family holidays</option>
+                        <option>Domestic holidays</option>
+                        <option>Europe tours</option>
+                        <option>Southeast Asia</option>
+                        <option>Dubai &amp; Middle East</option>
+                        <option>Maldives &amp; beach</option>
+                        <option>Luxury &amp; premium</option>
+                        <option>Group tours</option>
+                        <option>Pilgrimage</option>
+                        <option>Corporate / MICE</option>
+                        <option>General &mdash; all types</option>
+                    </select>
+                    <textarea name="notes" placeholder="Anything else we should know? (Optional)"></textarea>
+                    <button type="submit" class="btn btn-primary">Send me a sample lead &rarr;</button>
+                </div>
+                <p class="form-note">We respond within 1 business day. Your details are never shared.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="brand">
+        <span class="brand-mark">&#x2708;</span>
+        <span>TripLeads by Brandiqo</span>
+    </div>
+    <p>A travel-lead service by Ankiya Web Marketing LLP. &copy; 2026 All rights reserved.</p>
+    <p style="margin-top: 0.5rem;"><a href="index.html" class="link">&larr; Back to Ankiya</a></p>
+</footer>
+
+<script>
+    function handleSignup(e) {
+        e.preventDefault();
+        var btn = e.target.querySelector('button[type="submit"]');
+        var original = btn.innerHTML;
+        btn.innerHTML = 'Sending…';
+        btn.disabled = true;
+        setTimeout(function() {
+            btn.innerHTML = '✓ Got it &mdash; we\'ll WhatsApp you shortly';
+            btn.style.background = 'var(--brand-light)';
+            e.target.reset();
+            setTimeout(function() {
+                btn.innerHTML = original;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 4000);
+        }, 600);
+        return false;
+    }
+</script>
+
+</body>
+</html>
